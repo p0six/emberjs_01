@@ -1,0 +1,13 @@
+<h3>{{model.location}}</h3>
+<h3>{{moment-from model.createdAt}}</h3>
+<h3>{{moment-from model.sightedAt}}</h3>
+<h3>{{model.cryptid.name}}</h3>
+<img src="{{thumbnail-helper model.cryptid.profileImg}}">
+{{#each model.witnesses as |witness|}}
+  <h3>{{witness.fName}}</h3>
+{{/each}}
+
+{{#link-to 'sighting.edit' model.id tagName="button"
+  class="btn btn-success btn-block"}}
+  Edit
+{{/link-to}}
